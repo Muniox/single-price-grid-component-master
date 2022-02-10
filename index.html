@@ -11,33 +11,51 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Frontend Mentor | Single Price Grid Component</title>
   </head>
   <body>
     <main class="subscription">
-      <section class="subscription__overview">
-        <h1>Join our community</h1>
-        <p>30-day, hassle-free money back guarantee</p>
-        <p>
+      <section class="subscription__section subscription__section--overview">
+        <h1 class="subscription__title subscription__title--main">
+          Join our community
+        </h1>
+        <p class="subscription__text subscription__text--guarantee">
+          30-day, hassle-free money back guarantee
+        </p>
+        <p class="subscription__text subscription__text--tutorials">
           Gain access to our full library of tutorials along with expert code
           reviews. Perfect for any developers who are serious about honing their
           skills.
         </p>
       </section>
-      <section class="subscription__payment">
-        <h2>Monthly Subscription</h2>
-        <p>&dollar;29 per month</p>
-        <p>Full access for less than &dollar;1 a day</p>
-        <button>Sign Up</button>
-      </section>
-      <section class="subscription__about">
-        <h2>Why Us</h2>
-        <p>
-          Tutorials by industry experts Peer &amp; expert code review Coding
-          exercises Access to our GitHub repos Community forum Flashcard decks
-          New videos every week
+      <section class="subscription__section subscription__section--payment">
+        <h2 class="subscription__title">Monthly Subscription</h2>
+        <p class="subscription__text subscription__text--price">
+          <span class="subscription__price">&dollar;29</span> per month
         </p>
+        <p class="subscription__text">
+          Full access for less than &dollar;1 a day
+        </p>
+        <button class="subscription__sign-up">Sign Up</button>
+      </section>
+      <section class="subscription__section subscription__section--about">
+        <h2 class="subscription__title">Why Us</h2>
+        <ul class="subscription__list">
+          <li>Tutorials by industry experts</li>
+          <li>Peer &amp; expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
       </section>
     </main>
 

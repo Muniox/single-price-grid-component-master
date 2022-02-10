@@ -4,10 +4,175 @@
   padding: 0;
 }
 
+:root {
+  //primary colors
+  --cyan: hsl(179, 62%, 43%);
+  --cyan-payment: hsl(179, 61%, 44%);
+  --cyan-about: hsl(179, 47%, 52%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --link: hsl(228, 45%, 44%);
+
+  //neutral colors
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+
+  //font-weight
+  --bold: 700;
+  --normal: 400;
+
+  --separator: 8px;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--link);
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--light-gray);
+}
+
+.subscription {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:
+    minmax(267px, auto)
+    minmax(228px, auto)
+    minmax(227px, auto);
+  max-width: 311px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &__section {
+    display: grid;
+    align-content: space-between;
+    padding: 24px;
+
+    &--overview {
+      background-color: var(--white);
+    }
+
+    &--payment {
+      background-color: var(--cyan-payment);
+      color: var(--white);
+    }
+
+    &--about {
+      background-color: var(--cyan-about);
+      color: var(--white);
+    }
+  }
+
+  &__title {
+    font-size: 19px;
+    margin-bottom: var(--separator);
+
+    &--main {
+      color: var(--cyan);
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    color: var(--white);
+
+    &--guarantee {
+      font-weight: var(--bold);
+      color: var(--bright-yellow);
+      margin-bottom: var(--separator);
+    }
+
+    &--tutorials {
+      font-size: 13px;
+      line-height: 26px;
+      color: var(--grayish-blue);
+    }
+
+    &--price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--light-gray);
+      margin-bottom: var(--separator);
+    }
+  }
+
+  &__price {
+    color: var(--white);
+    font-size: 28px;
+  }
+
+  &__sign-up {
+    width: 100%;
+    background-color: var(--bright-yellow);
+    border: none;
+    border-radius: 5px;
+    height: 49px;
+    color: inherit;
+    font-weight: 700;
+    margin-top: 29px;
+  }
+
+  &__list {
+    list-style: none;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--light-gray);
+    font-weight: var(--normal);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .subscription {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:
+      minmax(216px, auto)
+      minmax(259px, auto);
+    max-width: 635px;
+    min-height: 475px;
+
+    &__section {
+      padding: 39px;
+
+      &--overview {
+        grid-column: 1 / span 2;
+        height: 216px;
+      }
+    }
+
+    &__title {
+      &--main {
+        font-size: 23px;
+      }
+    }
+
+    &__text {
+      &--guarantee {
+        font-size: 19px;
+      }
+
+      &--tutorials {
+        font-size: 15px;
+        max-width: 95%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .subscription {
+    margin: 0 10px;
+  }
 }
